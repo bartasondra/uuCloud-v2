@@ -1,0 +1,10 @@
+---
+- name: test
+  hosts: localhost
+  tasks:
+  - name: say hello to me
+    shell: |
+      pwd
+      ls -alt
+      echo "hello {{ name }}"
+  
