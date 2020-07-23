@@ -4,12 +4,5 @@
   tasks:
   - register: name
     shell: echo 'Hello {{ name }}'
-     
-  - register: ls
-    shell: ls -alt
-      
-  - register: pwd
-    shell: pwd
-    
-  - debug: msg="name: {{ name.stdout }}    ls: {{ ls.stdout }}  pwd: {{ pwd.stdout }}"
+  - debug: msg="name: {{ name.stdout }}"
   
