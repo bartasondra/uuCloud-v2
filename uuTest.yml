@@ -2,7 +2,7 @@
 - hosts: localhost
   connection: local
   tasks:
-  - shell: echo 'test'
+  - shell: echo 'Hello {{ name }}'
     register: foo
   - debug: msg="the echo was {{ foo.stdout }}"
   
