@@ -2,11 +2,14 @@
 - hosts: localhost
   connection: local
   tasks:
-  - register: foo
-    shell: |
-      echo 'Hello {{ name }}'
-      ls -alt
-      pwd
+  - register: name
+    shell: echo 'Hello {{ name }}'
+     
+  - register: ls
+    shell: ls -alt
+      
+  - register: pwd
+    shell: pwd
     
-  - debug: msg="the echo was {{ foo.stdout }}"
+  - debug: msg="name: {{ name.stdout }}    ls: {{ ls.stdout }}  pwd: {{ pwd.stdout }}"
   
