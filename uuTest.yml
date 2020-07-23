@@ -1,13 +1,11 @@
 ---
 - name: test
-  hosts: localhost
-  tasks:
-  - name: say hello to me
-    shell: |
-      pwd
-      ls -alt
-      echo "hello {{ name }}"
+  - hosts: localhost
+    connection: local
+    user: root
+    gather_facts: no
+    tasks:
+    - shell: echo 'test'
       register: foo
-    debug: msg="the echo was {{ foo.stdout }}"
-
+    - debug: msg="the echo was {{ foo.stdout }}"
   
