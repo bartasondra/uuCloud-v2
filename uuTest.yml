@@ -7,4 +7,7 @@
       pwd
       ls -alt
       echo "hello {{ name }}"
+      register: foo
+    debug: msg="the echo was {{ foo.stdout }}"
+
   
